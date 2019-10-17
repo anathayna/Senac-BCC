@@ -1,0 +1,34 @@
+1 -
+select au_lname + ',' + substring(au_fname, 1, 1) + '.' as 'Autores' from authors 
+
+2 -
+select max(len(title)) from titles
+
+3 -
+select datediff(day, '19951011', getdate())
+
+4 - 
+select datediff(year, pubdate, getdate()) as 'Anos Passados' from titles
+
+5 - 
+select title, ceiling (price * 1.15) from titles
+where type like 'business'
+
+6 -
+select count(au_id) from authors
+
+7 -
+select pub_id, count(*) from titles
+group by pub_id
+
+8 - 
+select distinct UNIDADE from titulo
+
+9 - 
+select unidade, count(titulo) from titulo
+group by UNIDADE
+order by 2 desc --2 é a segunda coluna
+
+10 -
+select sum(QTD) from titulo
+where unidade like 'SENAC'
